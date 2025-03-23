@@ -15,9 +15,9 @@ public class PostService {
     // Блок инициализации для первоначального наполнения списка
     {
         posts = new ArrayList<>();
-        posts.add(new Post("Первый пост", new Date()));
-        posts.add(new Post("Второй пост", new Date()));
-        posts.add(new Post("Третий пост", new Date()));
+        posts.add(new Post(0L,"Первый пост", new Date()));
+        posts.add(new Post(1L,"Второй пост", new Date()));
+        posts.add(new Post(2L,"Третий пост", new Date()));
     }
 
     public List<Post> listAllPosts() {
@@ -25,6 +25,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long) posts.size(),text, new Date()));
     }
 }
